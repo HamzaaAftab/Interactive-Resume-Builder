@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Editable Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>INTERACTIVE RESUME BUILDER</h1>
+    </div>
+    <div class="resume-builder-container">
+        <!-- Left Side: Form for User Input -->
+        <section class="resume-form">
+            <h2>Build Your Resume</h2>
+            <form id="resume-form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="profile-picture">Profile Picture URL:</label>
+                    <input type="url" id="profile-picture">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Education</legend>
+                    <label for="education">Education:</label>
+                    <textarea id="education" required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Work Experience</legend>
+                    <label for="work-experience">Work Experience:</label>
+                    <textarea id="work-experience" required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <label for="skills">Skills:</label>
+                    <textarea id="skills" required></textarea>
+                </fieldset>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+
+            <!-- Buttons for Share and Download -->
+            <div class="resume-actions">
+                <button id="copy-link">Copy Shareable Link</button>
+                <button id="download-pdf">Download as PDF</button>
+            </div>
+        </section>
+
+        <!-- Right Side: Generated Resume Section -->
+        <section class="resume-output">
+            <div class="resume" id="resume">
+                <section class="personal-info">
+                    <img id="output-profile-picture" class="profile-picture" src="" alt="Profile Picture">
+                    <h1 id="output-name" class="editable">Your Name</h1>
+                    <p id="output-username">Your Username</p>
+                    <p id="output-email" class="editable">Your Email</p>
+                </section>
+
+                <section class="education">
+                    <h2>Education</h2>
+                    <p id="output-education" class="editable">Your Education Details</p>
+                </section>
+
+                <section class="work-experience">
+                    <h2>Work Experience</h2>
+                    <p id="output-work-experience" class="editable">Your Work Experience</p>
+                </section>
+
+                <section class="skills">
+                    <h2>Skills</h2>
+                    <p id="output-skills" class="editable">Your Skills</p>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/html2pdf.js"></script> <!-- PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>
